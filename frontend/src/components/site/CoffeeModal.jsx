@@ -61,7 +61,7 @@ export default function CoffeeModal({ coffee, onClose }) {
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 40, opacity: 0, scale: 0.98 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-5xl max-h-[100svh] md:max-h-[90vh] overflow-hidden rounded-none md:rounded-3xl glass-dark border border-cream/10 grid grid-cols-1 md:grid-cols-2"
+            className="relative w-full max-w-5xl max-h-[100svh] md:max-h-[90vh] overflow-hidden rounded-none md:rounded-3xl glass-dark border border-cream/10 grid grid-rows-[14rem_1fr] grid-cols-1 md:grid-rows-1 md:grid-cols-2"
           >
             {/* Image side */}
             <div className="relative h-56 md:h-auto">
@@ -80,7 +80,11 @@ export default function CoffeeModal({ coffee, onClose }) {
             </div>
 
             {/* Content side */}
-            <div className="relative overflow-y-auto p-6 md:p-8 space-y-7">
+            <div
+              className="relative overflow-y-auto min-h-0 p-6 md:p-8 space-y-7"
+              data-lenis-prevent
+              data-testid="modal-scroll-area"
+            >
               <button
                 onClick={onClose}
                 data-testid="modal-close-btn"
