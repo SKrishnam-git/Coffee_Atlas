@@ -1,0 +1,143 @@
+{
+  "project_name": "Coffee Atlas \u2013 Discover the World of Coffee",
+  "theme": "Dark Mode First / Spatial UI",
+  "archetype": "ARCHETYPE 5: LUXURY with Organic & Earthy undertones. Deep, cinematic, and moody.",
+  "typography": {
+    "primary": "Playfair Display",
+    "primary_usage": "Main headings, hero text, and large numbers. Elegant, high-contrast serif. Weight: 400, 600.",
+    "secondary": "Poppins",
+    "secondary_usage": "Body text, UI elements, data meters, navigation. Clean geometric sans-serif for readability. Weight: 300, 400, 500.",
+    "accent": "Cormorant Garamond",
+    "accent_usage": "Editorial accents, subtitles, pull quotes. Often used in italic (font-style: italic).",
+    "scales": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl tracking-tighter leading-none",
+      "h2": "text-4xl md:text-5xl lg:text-6xl tracking-tight leading-none",
+      "h3": "text-2xl md:text-3xl lg:text-4xl tracking-tight",
+      "h4": "text-xl md:text-2xl font-medium",
+      "body": "text-base md:text-lg leading-relaxed text-cream/80",
+      "small_label": "text-xs md:text-sm tracking-[0.2em] uppercase font-semibold text-latte"
+    }
+  },
+  "colors": {
+    "background": "#1A1612",
+    "dark_roast": "#1A1612",
+    "espresso": "#3B2416",
+    "latte": "#C89B6D",
+    "cream": "#F6F2EC",
+    "gold": "#C89A47",
+    "emerald": "#006241",
+    "surface_glass": "rgba(59, 36, 22, 0.4)",
+    "border_glass": "rgba(246, 242, 236, 0.1)"
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Use backdrop-blur-xl or backdrop-blur-2xl with bg-espresso/40. MUST have a 1px border of border-cream/10 to create the 'milled crystal' edge. Never use flat muddy transparency.",
+    "shadows": "Soft, diffused ambient glow. shadow-[0_8px_32px_rgba(200,154,71,0.05)] for floating cards.",
+    "textures": "Background should have a very subtle SVG noise/grain overlay (fixed, opacity 5-10%, pointer-events-none) to remove digital flatness and make it feel like film.",
+    "depth": "Layering: Background (Grain) -> Particles (floating bokeh/steam via framer-motion) -> Content -> Floating Glass Cards."
+  },
+  "layouts": {
+    "spacing_philosophy": "Generous. Use massive vertical padding between sections (py-24 md:py-32). Tension through asymmetry.",
+    "bento_grid": "Grid items must use span logic to create asymmetry. Example: 1 tall card, 2 square cards, 1 wide horizontal card. gap-6 or gap-8.",
+    "container": "max-w-7xl mx-auto px-6 md:px-12."
+  },
+  "motion": {
+    "smooth_scroll": "Lenis MUST be used for standard smooth scrolling to give the site weight and momentum.",
+    "hero_reveal": "Kinetic typography. Masked line-by-line reveal using Framer Motion (initial Y offset, hidden overflow, animate to 0).",
+    "parallax": "Use Framer Motion useScroll and useTransform for subtle image parallax and floating background beans/steam particles.",
+    "micro_interactions": "Hover states on cards: slight scale up (scale-105), tilt effect, border glow intensifies. Buttons should have magnetic tracking if possible, or elegant fill transitions.",
+    "marquee": "Slow editorial marquee for transition sections. 'Aroma \u2014 Body \u2014 Acidity \u2014 Flavor \u2014' using Cormorant Garamond italic."
+  },
+  "sections_and_components": {
+    "Navigation": {
+      "style": "Sticky at top (top-0 z-50), crystal glassmorphism (backdrop-blur-2xl bg-dark_roast/70 border-b border-cream/10).",
+      "content": "Logo left, Nav links center (hidden on mobile), CTA right."
+    },
+    "Hero": {
+      "layout": "Massive typography 'Explore The World Of Coffee', subtitle 'Every cup tells a story...'. Background is a dark moody cinematic image with a vignette overlay.",
+      "motion": "On-load masked text reveal. Background image scales down slightly over 3 seconds (scale 1.1 -> 1.0) on load."
+    },
+    "Editorial_Marquee": {
+      "content": "A slow, elegant scrolling text strip.",
+      "style": "bg-espresso text-latte text-5xl md:text-7xl py-6 border-y border-gold/20"
+    },
+    "Coffee_Types": {
+      "layout": "Bento Grid of floating glass cards. Each card contains image, title, origin, and custom meters (strength, milk, bitterness, caffeine).",
+      "meters": "Progress bars using the Gold or Latte colors, background espresso/50."
+    },
+    "Coffee_Modal_Page": {
+      "layout": "Detailed view. Can be a full-screen Framer Motion modal or separate page route. 50/50 split (image left, scrolling content right).",
+      "content": "History, origin, taste notes, ingredients, recipe ratios, calories."
+    },
+    "History_Timeline": {
+      "layout": "Vertical line down the center. Alternating left/right content blocks.",
+      "motion": "Use InView from Framer Motion to draw the line and fade in content blocks as user scrolls."
+    },
+    "Interactive_Map": {
+      "style": "Dark mode SVG map. Interactive dots (Gold/Emerald) pulsing.",
+      "content": "Brazil, Colombia, Ethiopia, Vietnam, India, Italy, Turkey. Hover reveals region details."
+    },
+    "Brewing_Methods": {
+      "layout": "Horizontal scroll or Masonry layout. Cards with sleek product photography."
+    },
+    "Recipes": {
+      "layout": "Step-by-step accordion (Shadcn Accordion customized) or vertical numbered list. High contrast numbering."
+    },
+    "Stats_Counters": {
+      "layout": "Grid of large numbers (Playfair Display) counting up when in view.",
+      "motion": "Framer motion animate from 0 to target value."
+    },
+    "Gallery": {
+      "layout": "Pinterest-style Masonry. Images have no gaps or very tight gaps (gap-2), hover reveals captions with glass overlay."
+    },
+    "Testimonials": {
+      "layout": "Glass cards, 5-star icons (Gold). Subtle floating animation on the cards (y-axis sine wave motion)."
+    },
+    "Footer": {
+      "style": "bg-dark_roast pt-32 pb-12. Massive logo typography.",
+      "content": "Newsletter form (custom Shadcn input), social links, standard links."
+    }
+  },
+  "image_urls": {
+    "hero_cinematic": {
+      "url": "https://images.unsplash.com/photo-1609050471053-8636409f9f5b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwyfHxkYXJrJTIwbW9vZHklMjBlc3ByZXNzbyUyMHBvdXJpbmclMjBjaW5lbWF0aWN8ZW58MHx8fHwxNzg1Njg4MjkzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Dark moody espresso pouring. Perfect for the hero background."
+    },
+    "brewing_alternative": {
+      "url": "https://images.unsplash.com/photo-1595928642581-f50f4f3453a5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbW9vZHklMjBlc3ByZXNzbyUyMHBvdXJpbmclMjBjaW5lbWF0aWN8ZW58MHx8fHwxNzg1Njg4MjkzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "White ceramic cup on wooden table. Great for brewing or recipes section."
+    },
+    "beans_macro": {
+      "url": "https://images.unsplash.com/photo-1580933073521-dc49ac0d4e6a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxzcGVjaWFsdHklMjBjb2ZmZWUlMjBiZWFucyUyMG1hY3JvfGVufDB8fHx8MTc4NTY4ODI5M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Macro shot of roasted beans. Use as textured background element or in coffee types."
+    },
+    "coffee_cherries": {
+      "url": "https://images.unsplash.com/photo-1586095516671-d085ff58cdd4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxzcGVjaWFsdHklMjBjb2ZmZWUlMjBiZWFucyUyMG1hY3JvfGVufDB8fHx8MTc4NTY4ODI5M3ww&ixlib=rb-4.1.0&q=85",
+      "description": "Red coffee cherries on branch. Perfect for the history or origin map section."
+    },
+    "farm_landscape": {
+      "url": "https://images.unsplash.com/photo-1647220577886-6a5faaa7c141?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBmYXJtJTIwbGFuZHNjYXBlJTIwbWlzdHxlbnwwfHx8fDE3ODU2ODgyOTN8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Misty coffee farm landscape. Ideal for the Origins/World of Coffee introductory block."
+    },
+    "espresso_machine": {
+      "url": "https://images.unsplash.com/photo-1524686788093-aa1f9c0f7c4f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MDV8MHwxfHNlYXJjaHwzfHxkYXJrJTIwbW9vZHklMjBlc3ByZXNzbyUyMHBvdXJpbmclMjBjaW5lbWF0aWN8ZW58MHx8fHwxNzg1Njg4MjkzfDA&ixlib=rb-4.1.0&q=85",
+      "description": "Espresso machine macro. Use in brewing methods section."
+    }
+  },
+  "instructions_to_main_agent": {
+    "1": "You MUST NOT apply universal transition (`transition: all`). Always add transitions for specific interactive elements.",
+    "2": "Never use pure #000000. Use the provided #1A1612 (dark_roast) as the deepest black.",
+    "3": "Every glass container must have a 1px border (`border-cream/10` or similar) to ensure the crystal aesthetic.",
+    "4": "Install and use `lucide-react` for any necessary icons. Install `framer-motion` for all complex animations.",
+    "5": "Do not center align the entire app container. Maintain left alignment for text to preserve editorial readability.",
+    "6": "Use the provided image URLs exclusively. DO NOT use placeholder services like via.placeholder.com.",
+    "7": "All interactive and key informational elements MUST include a `data-testid` attribute (e.g., `data-testid=\"coffee-type-card\"`).",
+    "8": "Implement a custom Lenis scroll wrapper component to ensure smooth momentum scrolling across the entire site."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Prioritize optical alignment over geometric alignment.",
+    "Ensure high contrast for text (APCA standard).",
+    "Avoid generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy and backdrop filters.",
+    "Implement micro-animations on all interactive elements (hover states, transitions)."
+  ]
+}
