@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Coffee, Instagram, Twitter, Facebook, Youtube, MapPin, Send } from "lucide-react";
 import { toast } from "sonner";
-import { postContact, postNewsletter } from "../../lib/api";
 import { Reveal, SectionLabel } from "./Reveal";
 import { scrollToId } from "./SmoothScroll";
 
@@ -12,18 +11,10 @@ const NAV_IDS = ["hero", "coffee-types", "history", "recipes", "brewing", "galle
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [busy, setBusy] = useState(false);
-
   const subscribe = async (e) => {
     e.preventDefault();
     if (!email) return;
-    try {
-      await postNewsletter(email);
-      toast.success("Welcome aboard! Check your inbox for a fresh brew of updates.");
-      setEmail("");
-    } catch {
-      toast.error("Please enter a valid email address.");
-    }
+    toast.info("Newsletter signup is not connected on this static showcase yet.");
   };
 
   const sendContact = async (e) => {
@@ -32,16 +23,7 @@ export default function Footer() {
       toast.error("Please fill in all fields.");
       return;
     }
-    setBusy(true);
-    try {
-      await postContact(form);
-      toast.success("Message sent! We'll get back to you soon.");
-      setForm({ name: "", email: "", message: "" });
-    } catch {
-      toast.error("Something went wrong. Please try again.");
-    } finally {
-      setBusy(false);
-    }
+    toast.info("The contact form is not connected on this static showcase yet.");
   };
 
   return (
@@ -84,11 +66,10 @@ export default function Footer() {
               />
               <button
                 type="submit"
-                disabled={busy}
                 data-testid="contact-submit"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gold text-darkroast font-medium hover:bg-latte transition-colors disabled:opacity-60"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gold text-darkroast font-medium hover:bg-latte transition-colors"
               >
-                {busy ? "Sending..." : "Send Message"} <Send className="w-4 h-4" />
+                Send Message <Send className="w-4 h-4" />
               </button>
             </form>
           </Reveal>
