@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 import SmoothScroll from "./components/site/SmoothScroll";
 import Navbar from "./components/site/Navbar";
 import Hero from "./components/site/Hero";
@@ -57,6 +58,7 @@ function App() {
           },
         }}
       />
+      <Analytics />
     </SmoothScroll>
   );
 }
